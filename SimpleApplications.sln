@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectorySync2", "DirectorySync2\DirectorySync2.csproj", "{594EED4C-4F0A-4DF2-AA4D-F3AAD8F4920E}"
 EndProject
@@ -44,6 +44,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC Logger", "PC Logger\PC Logger.csproj", "{45475414-00F6-4260-8130-524C938A4EFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photo Zipper", "Photo Zipper\Photo Zipper.csproj", "{9E9E9145-4AFD-4B91-8390-22AE4973B2D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{57970C77-CAF5-42D1-86FA-BBDBAB80D9BB}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -330,5 +335,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8093F011-386B-479A-B80D-9C8F55D22035}
 	EndGlobalSection
 EndGlobal
