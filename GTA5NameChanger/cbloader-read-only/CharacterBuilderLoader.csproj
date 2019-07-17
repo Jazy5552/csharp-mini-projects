@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{355AFEF1-5BE9-48B0-922A-0067E62B286C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CharacterBuilderLoader</RootNamespace>
+    <AssemblyName>CBLoader</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>Resources\hres-large.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\CharacterBuilder\CharBuilderFull_p\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApplicationUpdate.Client">
+      <HintPath>..\..\CharacterBuilder\CharBuilderFull_p\ApplicationUpdate.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="NativeDebugWrappers, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\NativeDebugWrappers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cbconfig.cs">
+      <DependentUpon>cbconfig.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PEFiles\CLRDirectory.cs" />
+    <Compile Include="PEFiles\FieldDef.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="LastMergedFileInfo.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="PEFiles\MetaDataHeader.cs" />
+    <Compile Include="PEFiles\MetaDataStream.cs" />
+    <Compile Include="PEFiles\MetaTableID.cs" />
+    <Compile Include="PEFiles\Method.cs" />
+    <Compile Include="PEFiles\MethodDef.cs" />
+    <Compile Include="PEFiles\PEOptionalHeader.cs" />
+    <Compile Include="PEFiles\PEDataDirectory.cs" />
+    <Compile Include="PEFiles\PEFile.cs" />
+    <Compile Include="PEFiles\PEFileHeader.cs" />
+    <Compile Include="PEFiles\PESection.cs" />
+    <Compile Include="PEFiles\PoundTildeStream.cs" />
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="ProcessMemoryReader.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PEFiles\TableInfo.cs" />
+    <Compile Include="StartupFlags.cs" />
+    <Compile Include="UpdateLog.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cbconfig.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Custom\sample.part">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="default.cbconfig">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="icons\hres-huge.ico" />
+    <Content Include="Changelog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gpl-2.0.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README.TXT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\hres-large.ico" />
+    <None Include="icons\hres-med.ico" />
+    <None Include="icons\hres-small.ico" />
+    <None Include="icons\lres-large.ico" />
+    <None Include="icons\lres-med.ico" />
+    <None Include="icons\lres-small.ico" />
+    <None Include="icons\mres-large.ico" />
+    <None Include="icons\mres-med.ico" />
+    <None Include="icons\mres-small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <PropertyGroup>
+    <MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\.build</MSBuildCommunityTasksPath>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.targets"/>
+
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+    <Target Name="Release">
+    <ReadLinesFromFile File="Program.cs">
+      <Output TaskParameter="Lines" ItemName="ItemsFromFile" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <Pattern>static string Version = "([0-9\.b]+)"</Pattern>
+      <In>@(ItemsFromFile)</In>
+      <VersionLine>$([System.Text.RegularExpressions.Regex]::Match($(In), $(Pattern)))</VersionLine>
+      <VersionString>$([System.Text.RegularExpressions.Regex]::Match($(VersionLine), "([0-9\.b]+)"))</VersionString>
+    </PropertyGroup>
+    <ItemGroup>
+      <PublishFiles Include="bin\release\CBLoader.exe;Changelog.txt;default.cbconfig;gpl-2.0.txt;bin\release\NativeDebugWrappers.dll;README.txt" />
+    </ItemGroup>
+    <Copy SourceFiles="@(PublishFiles)" DestinationFolder="Releases\$(VersionString)\"></Copy>
+	<ItemGroup>
+	  <ZipFiles Include="Releases\$(VersionString)\*" />
+	</ItemGroup>
+    <Zip Files="@(ZipFiles)" WorkingDirectory="Releases\$(VersionString)\" ZipFileName="Releases\CBLoader $(VersionString).zip" />
+	<RemoveDir Directories="Releases\$(VersionString)\" />
+	<WriteLinesToFile File="Releases\Current.txt" Lines="$(VersionString)" Overwrite="true" />
+  </Target>
+</Project>
